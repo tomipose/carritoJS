@@ -1,19 +1,42 @@
+/* ARREGLOS */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 body {
-    /* background-color: #F8F9F9 ; */
-    background-color: #ebe6d3;
-background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-color: #996B55;
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
 }
+.row {
+    --bs-gutter-x: 0rem;
+}
+th {
+    color: beige;
+}
+td {
+    color: beige;
+}
+.blockquote-footer {
+    margin-top: 0;
+    font-size: 2rem;
+    font-family: 'Source Code Pro', monospace;
+}
+html {
+    scroll-behavior: smooth;
+}
+.modal {
+    display: none;
+}
+
+/* ESTILOS PROPIOS */
+
 .titulo {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    color: beige;
 }
 .portada {
     background-image: url(imagenes/fondo.jpg);
@@ -36,6 +59,27 @@ background-image: url("https://www.transparenttextures.com/patterns/black-linen.
     align-items: center;
     color: #fff;
     padding: 20px;
+    text-shadow: 5px 5px #23353A;
+}
+
+.animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
 }
 
 .contenedor--cards {
@@ -45,4 +89,44 @@ background-image: url("https://www.transparenttextures.com/patterns/black-linen.
 }
 .btn-dark:hover {
     background-color: #27AE60;
+}
+/* SECCION ANIMADA CON FRASES */
+
+.tipeoAnimado {
+    font-family: 'Cinzel', serif;
+    color: #C58978;
+    font-style: normal;
+
+}
+
+.fondo__seccion--animada {
+    background-color: #23353A;
+    padding: 15px;
+}
+.scroll1 {
+    display: none;
+}
+.scroll2 {
+    display: none;
+}
+.scroll3 {
+    display: none;
+}
+.imagen__svg {
+    width: 25rem;
+}
+.texto__informacion--cita {
+    color: aliceblue;
+    font-family: 'Source Code Pro', monospace;
+    padding: 8px;
+    margin-top: 3rem;
+}
+.texto__informacion {
+    color: aliceblue;
+    font-family: 'Source Code Pro', monospace;
+    padding: 8px;
+    margin-top: 3rem;
+}
+.texto__titulo--carrito {
+    font-family: 'Abril Fatface', cursive;
 }

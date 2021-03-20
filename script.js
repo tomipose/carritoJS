@@ -23,44 +23,7 @@ items.addEventListener("click", e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch([
-            {
-              "precio": 700,
-              "id": 1,
-              "title": "Michel Foucault - Vigilar y Castigar",
-              "imagen": "/imagenes/michel.jpg"
-            },
-            {
-              "precio": 800,
-              "id": 2,
-              "title": "Frederick Nietzsche - El Anticristo",
-              "imagen": "/imagenes/niche.jpg"
-            },
-            {
-              "precio": 500,
-              "id": 3,
-              "title": "Albert Camus - El mito de Sisifo",
-              "imagen": "/imagenes/camus.jpg"
-            },
-            {
-              "precio": 600,
-              "id": 4,
-              "title": "Platon - El Banquete",
-              "imagen": "/imagenes/platon.jpg"
-            },
-            {
-              "precio": 400,
-              "id": 5,
-              "title": "Martin Heidegger - El ser y el tiempo",
-              "imagen": "/imagenes/martin.jpg"
-            },
-            {
-              "precio": 650,
-              "id": 6,
-              "title": "Max Weber - La Etica Protestante y el Espiritu del Capitalismo ",
-              "imagen": "/imagenes/hegel.jpg"
-            }
-          ])
+        const res = await fetch("api.json")
         const data = await res.json()
         pintarCards(data)
     } catch (error) {
@@ -142,6 +105,13 @@ const crearFooter = () => {
 
     const vaciarCarro = document.getElementById("vaciar-carrito")
     vaciarCarro.addEventListener("click", () => {
+        carrito = {}
+        pintarCarrito()
+    })
+
+    const compra = document.getElementById("comprar-carrito")
+    compra.addEventListener("click", () => {
+        $('.modal').fadeIn()
         carrito = {}
         pintarCarrito()
     })
